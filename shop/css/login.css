@@ -1,0 +1,75 @@
+#login-container{
+    margin-top: 50px;
+    height: 500px;
+}
+#login-container form{
+    width: 570px;
+    height: 290px;
+    float: left;
+}
+#login-container h5{
+    color: #5d5959;
+    font-size: 20px;
+    margin-top: 60px;
+}
+#login-container label input{
+    width: 400px;
+    height: 38px;
+    outline: none;
+    font-size: 20px;
+}
+#login-container input[value="login"]{
+    width: 114px;
+    height: 41px;
+    background: #EF8743;
+    color: #fff;
+    outline: none;
+}
+#login-container .btn{
+    font-size: 20px;
+    border-radius: 8px;
+    border: 0;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+}
+#login-container input[value="login"]:hover{
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+#forget{
+    color: #5d5959;
+    text-decoration: underline;
+    margin-top: 10px;
+    display: block;
+}
+#register{
+    float: right;
+    width: 540px;
+}
+#register h3{
+    color: #EF8743;
+}
+#register p{
+    color: #999;
+    margin-top: 10px;
+}
+#register .btn{
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    width: 104px;
+    height: 42px;
+    display: block;
+    text-align: center;
+    line-height: 42px;
+    margin-top: 20px;
+    font-size: 14px;
+    outline: none;
+}
+#register .btn:hover{
+    color: #fff;
+    background: #EF8743;
+    border: 1px solid #EF8743;
+}

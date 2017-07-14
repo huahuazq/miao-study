@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function  getByClass(className, context) {
+        context = context || document;
+        var arr = context.getElementsByTagName("*");
+        var reg = new RegExp("\\b"+className+"\\b");
+        var result = [];
+        for(var i=0; i<arr.length; i++){
+            if(reg.test(arr[i].className)){
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    }
+
+    function addEvent(elem,type,fn){
+        if(elem.addEventListener){
+            elem.addEventListener(type,fn,false);
+        }else if(elem.attachEvent){
+            elem[type+fn] = function () {
+                fn.call(elem);
+            };
+            elem.attachEvent('on'+type,elem[type+fn]);
+        }else{
+            elem['on'+type] = fn;
+        }
+    }
+</script>
+</body>
+</html>

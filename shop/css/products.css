@@ -1,0 +1,117 @@
+#products{
+    height: 1038px;
+    margin-top: 50px;
+}
+#breakin{
+    width: 240px;
+    /*height: 600px;*/
+}
+#breakin h2{
+    /*margin-top: 50px;*/
+    font-size: 30px;
+}
+#breakin p{
+    margin-top: 30px;
+    width: 230px;
+    height: 36px;
+    background: #3c3b3b;
+    color: #fff;
+    line-height: 36px;
+    padding-left: 10px;
+    margin-bottom: 22px;
+    /*position: relative;*/
+}
+#choose .classify{
+    width: 230px;
+    background: #f9f9f9;
+    margin-top: 8px;
+    margin-left: 10px;
+    color: #8c8c8c;
+    /*height: 30px;*/
+    line-height: 30px;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+}
+#choose .submenu{
+    height: 0;
+    overflow: hidden;
+}
+.classify img{
+    /*float: right;*/
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.submenu li{
+    background: #fff;
+    color: #000;
+}
+#brand label{
+    color: #555555;
+    margin-left: 20px;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+}
+#brand label input{
+    margin-right: 5px;
+    /*background: #fff;*/
+    /*border: 2px solid orange;*/
+}
+
+
+#product{
+    width: 800px;
+    /*float: left;*/
+    margin-left: 50px;
+    /*float: right;*/
+}
+#product .product-info{
+    width: 248px;
+    height: 456px;
+    /*border: 1px solid #ccc;*/
+    float: left;
+    margin-right: 18px;
+    margin-bottom: 15px;
+    /*margin-top: 30px;*/
+    /*margin-left: 30px;*/
+}
+#product .product-info img{
+    width: 248px;
+    height: 248px;
+    border: 1px solid #ccc;
+    vertical-align: bottom;
+    display: block;
+}
+#product .product-info a{
+    display: block;
+}
+.bs{
+    margin-right: 0;
+}
+#product .product-detail{
+    background: lavenderblush;
+    /*width: 248px;*/
+    height: 198px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.product-detail input{
+    width: 150px;
+    height: 30px;
+    text-indent: 10px;
+    outline: none;
+}
+#product .add{
+    background: orange;
+    width: 150px;
+    height: 50px;
+    margin-top: 5px;
+    border: 0;
+    color: #ffffff;
+    font-size: 20px;
+    outline: none;
+}
+
+

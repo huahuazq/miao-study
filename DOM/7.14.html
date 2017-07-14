@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="ipt" value="666">//获取和改变input的value的值
+<button id="btn">click</button>
+<script src="jq/jquery-1.11.2.js"></script>
+<script>
+    $('#btn').on('click', function () {
+        alert($('#ipt').val());
+    });
+</script>
+</body>
+</html>

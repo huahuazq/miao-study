@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #wrapper{
+            width: 400px;
+            height: 300px;
+            border: 1px solid #000;
+            background: #ccc;
+            margin: 150px auto;
+        }
+        #menu{
+            height: 40px;
+            /*width: 400px;*/
+            border-bottom: 1px solid #000;
+            /*float: left;*/
+        }
+        #menu li{
+            float: left;
+            margin-right: 15px;
+            width: 100px;
+            line-height: 40px;
+            background: gray;
+            text-align: center;
+            cursor: pointer;
+        }
+        #menu .select{
+            background: #000;
+            color: #fff;
+        }
+        #text div{
+            display: none;
+        }
+        #text .select{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <ul id="menu">
+        <li class="select">html</li>
+        <li>css</li>
+        <li>javascript</li>
+    </ul>
+    <div id="text">
+        <div class="select">哈哈哈</div>
+        <div>啦啦啦</div>
+        <div>呼呼呼</div>
+    </div>
+</div>
+
+<script>
+    var oMenu = document.getElementById("menu");
+    var aLi = oMenu.getElementsByTagName("li");
+    var oText = document.getElementById("text");
+    var aDiv = oText.getElementsByTagName("div");
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].index = i;
+        aLi[i].onclick = function () {
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].className = "";
+                aDiv[i].className = "";
+            }
+            this.className = "select";
+            aDiv[this.index].className = "select";
+        }
+    }
+</script>
+</body>
+</html>

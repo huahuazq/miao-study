@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #fold{
+            width: 100px;
+            /*height: 40px;*/
+            border: 1px solid #000;
+        }
+        #fold h3{
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+        }
+        .menu li{
+            text-align: center;
+            cursor: pointer;
+        }
+        .menu li:hover{
+            background: #ccc;
+        }
+        .menu{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul id="fold">
+    <li>
+        <h3>管理员</h3>
+        <ul class="menu">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+    <li>
+        <h3>交流员</h3>
+        <ul class="menu">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    var oFold = document.getElementById("fold");
+    var aH3 = oFold.getElementsByTagName("h3");
+    var aMenu = oFold.getElementsByTagName("ul");
+//    for(var i=0; i<aH3.length; i++){
+//        aH3[i].index = i;
+//        aH3[i].onclick = function (){
+//            if(aMenu[this.index].style.display == "block") {
+//                aMenu[this.index].style.display = "none";
+//            }else{
+//                aMenu[this.index].style.display = "block"
+//            }
+//        };
+//    }
+    for(var i=0; i<aH3.length; i++){
+        aH3[i].index = i;
+        aH3[i].bFlag = false;
+        aH3[i].onclick = function () {
+            if(this.bFlag){
+                aMenu[this.index].style.display = "none";
+            }else{
+                aMenu[this.index].style.display = "block";
+            }
+            this.bFlag =! this.bFlag;
+        };
+    }
+
+</script>
+</body>
+</html>

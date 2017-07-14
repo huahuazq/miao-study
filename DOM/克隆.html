@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1 id="h11"></h1>
+    <p></p>
+    <h2></h2>
+</div>
+<script>
+
+    //封装获取所有当前元素的所有兄弟元素节点的方法
+    /**
+     *
+     * @param elem 当前元素
+     * @param {Array} 返回当前元素的元素节点
+     */
+
+
+
+    var oH1 = document.getElementById("h11");
+    function siblings(elem){
+        var arr = [];
+        var elements = elem.parentNode.children;
+        for(var i=0; i<elements.length; i++){
+            if(elements[i] != elem){
+                arr.push(elements[i]);
+            }
+        }
+        return arr;
+    }
+    console.log(siblings(oH1));
+
+    /**
+     * 删除给定的元素
+     * @param elem
+     */
+    function remove(elem) {
+        elem.parentNode.removeChild(elem);
+    }
+
+    /**
+     * 在给定的当前元素的前面插入一个新元素
+     * @param elem
+     */
+    function before(elem) {
+        elem.parentNode.insertBefore(newNode,elem);
+    }
+
+    /**
+     * 在给定的当前元素的后面插入一个新元素
+     * @param elem
+     */
+    function after(elem,newNode) {
+        if(elem.nextSibling){
+            elem.parentNode.insertBefore(newNode,elem);
+        }else{
+            elem.parentNode.appendChild(newNode);
+        }
+    }
+
+
+
+    function $(selector, context) {
+        context = context || document;
+        switch (selector.charAt(0)){
+            case '#':
+                return [document.getElementById(selector.substring(1))];
+                break;
+            case '.':
+                return getByClass(selector.substring(1),context);
+            break;
+            default:
+                return context.getElementsByTagName(selector);
+                break;
+        }
+
+    }
+    function  getByClass(className, context) {
+        context = context || document;
+        var arr = context.getElementsByTagName("*");//选取所有的标签
+        var reg = new RegExp("\\b"+className+"\\b");//利用\对b前面的\进行转义，如果不写转义字符会自动默认b里的\为转义字符，所以需要在前面多写一个\对\b进行区分。此句指的是class有可能有这种情况class:cc aa/aa cc/bb aa cc; 所以不能只是单纯的找class只为aa的，但无论怎么样如果是给class命名一个aa，它一定是单独的不会和其他字母相连在边界位置，所以给它加上左边界和右边界。
+        var result = [];
+        for(var i=0; i<arr.length; i++){
+            if(reg.test(arr[i].className)){
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    }
+
+    function  getStyle(elem, attr) {
+        //能力检测
+        if(elem.currentStyle){
+            return elem.currentStyle[attr];
+        }else if(window.getComputedStyle){
+            return getComputedStyle(elem, false)[attr];
+        }else{
+            return elem.style[attr];
+        }
+    }
+    
+    function css() {
+        
+    }
+
+</script>
+</body>
+</html>

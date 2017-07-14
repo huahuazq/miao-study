@@ -1,0 +1,201 @@
+#single{
+    height: 650px;
+    margin-top: 50px;
+}
+#single-pic{
+    width: 494px;
+    height: 567px;
+    overflow: hidden;
+    position: relative;
+}
+#single .wrapper{
+    position: relative;
+}
+#single-pic .big-pic{
+    padding: 6px;
+    border: 1px solid #ccc;
+}
+#single-pic .big-pic img{
+    width: 480px;
+    height: 400px;
+}
+#single-pic .small-pic{
+    width: 800px;
+    height: 133px;
+    margin-top: 10px;
+    position: relative;
+}
+#single-pic .small-pic img{
+    width: 150px;
+    height: 125px;
+    border: 1px solid #ccc;
+    padding: 3px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#single-pic #small-pic .select{
+    border: 1px solid #000;
+}
+#magnify{
+    position: absolute;
+    left: 500px;
+    top: 10px;
+    width: 480px;
+    height: 400px;
+    overflow: hidden;
+    display: none;
+}
+#magnify img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#drag{
+    width: 200px;
+    height: 200px;
+    background: #cccccc;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    display: none;
+}
+#mask{
+    width: 480px;
+    height: 405px;
+    background: #ff0000;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#single-description{
+    width: 570px;
+    height: 612px;
+    margin-left: 30px;
+}
+#single-description h3{
+    font-size: 24px;
+    /*margin-left: 50px;*/
+    margin-top: 50px;
+}
+#single-description .lip{
+    color: #999;
+    font-size: 13px;
+    /*margin-left: 50px;*/
+}
+#single-description .price{
+    color: #fa558f;
+    font-size: 24px;
+    font-weight: bolder;
+    /*padding-left: 50px;*/
+    margin: 30px 0;
+}
+#single-description p span{
+    /*margin-left: 50px;*/
+}
+#single-description .num{
+    width: 50px;
+    height: 37px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-indent: 10px;
+    margin-left: 10px;
+}
+.add{
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background: #3c3b3b;
+    border: 0;
+    border-radius: 8px;
+    margin: 20px 0;
+    outline: none;
+    cursor: pointer;
+}
+.add:hover{
+    color: #000;
+    background: #fff;
+    border: 2px solid #000;
+}
+#single-description .brand{
+    width: 570px;
+    height: 106px;
+    border-top: 1px solid #f00;
+    border-bottom: 1px solid #f00;
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
+    line-height: 50px;
+    font-size: 14px;
+}
+#single-description .brand span{
+    color: #999;
+}
+#single-description .brand a{
+    color: #ff530d;
+}
+#single-description .depict{
+    margin: 20px 0;
+    font-size: 14px;
+}
+#single-description .description{
+    color: #999;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+#dependence{
+    height: 424px;
+}
+#dependence h3{
+    background: #F3F3F3;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+#dependence .product-info{
+    width: 285px;
+    height: 344px;
+    float: left;
+    text-align: center;
+}
+.product-info img{
+    width: 260px;
+    height: 255px;
+    /*float: left;*/
+}
+.product-info .name{
+    color: #000;
+    font-size: 18px;
+    /*margin-left: 35px;*/
+}
+.product-info .name:hover{
+    color: #ff530d;
+}
+.product-info .btn{
+    /*margin-left: 60px;*/
+    width: 110px;
+    height: 34px;
+    font-size: 13px;
+}
+#single-pic .arrow{
+    width: 20px;
+    height: 20px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 240px;
+    z-index: 1;
+}
+#single-pic #left{
+    left: 15px;
+}
+#single-pic #right{
+    right: 15px;
+}

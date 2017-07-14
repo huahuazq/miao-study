@@ -1,0 +1,112 @@
+#cart-container{
+    height: 600px;
+    background: #efefef;
+}
+#cart-mine{
+    width: 855px;
+    height: 504px;
+}
+#cart-mine h2{
+    margin-top: 50px;
+}
+#cart-mine .cosmetic{
+    width: 134px;
+    height: 134px;
+    float: left;
+}
+#cart-mine .cart-detail{
+    width: 840px;
+    height: 204px;
+    margin-top: 30px;
+}
+.cart-detail .close{
+    float: right;
+    cursor: pointer;
+}
+.cart-detail .cart-info{
+    margin-left: 30px;
+    float: left;
+}
+#cart-mine h3{
+    margin-left: 20px;
+}
+#cart-price{
+    width: 280px;
+    height: 381px;
+    border-left: 1px solid #000;
+    margin-top: 50px;
+}
+/*#price1{*/
+    /*height: 381px;*/
+    /**/
+    /**/
+/*}*/
+.cart-detail .price{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #000;
+    width: 625px;
+}
+.cart-detail .time{
+    margin-top: 20px;
+    font-size: 13px;
+    color: #999;
+}
+.time .arrive{
+    float: right;
+}
+.price .on-sale{
+    margin-right: 30px;
+}
+.price input[type="number"]{
+    width: 82px;
+    height: 30px;
+    text-indent: 10px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    outline: none;
+}
+.price .single-price{
+    font-size: 26px;
+}
+#cart-price .click{
+    width: 130px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+}
+#cart-price .continue{
+    background: orange;
+    margin-top: 40px;
+    margin-left: 60px;
+}
+#cart-price .continue:hover{
+    background: #000;
+}
+#cart-price .descript{
+    margin-left: 60px;
+    color: #000;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+#cart-price .count{
+    margin-left: 60px;
+}
+#cart-price span{
+    margin-left: 60px;
+}
+#cart-price .summury{
+    border-top: 1px solid #000;
+    font-weight: bolder;
+}
+#cart-price .list{
+    background: #000;
+    margin-left: 60px;
+    margin-top: 30px;
+}
+#cart-price .list:hover{
+    background: orange;
+}
