@@ -5,10 +5,31 @@
     <title>Title</title>
 </head>
 <body>
+<form method="post" action="">
+    <br>
+    <input type="checkbox" name="items" value="足球" checked="2222">足球
+    <input type="checkbox" name="items" value="篮球">篮球
+    <input type="checkbox" name="items" value="羽毛球">羽毛球
+    <input type="checkbox" name="items" value="乒乓球">乒乓球
+    <br>
+    <input type="button" id="checkedAll" value="全 选">
+    <input type="button" id="checkedNo" value="全不选">
+    <input type="button" id="checkedRev" value="反 选">
+</form>
 <script src="jq/jquery-1.11.2.js"></script>
 <script>
     $(function () {
-        
+        $('#checkedAll').on('click',function () {
+            $('[name=items]').prop('checked', true);
+        });
+        $('#checkedNo').on('click', function () {
+            $('[name=items]').prop('checked', false);
+        });
+        $('#checkedRev').on('click', function () {
+            $('[name=items]').each(function () {
+                this.checked =! this.checked;
+            });
+        });
     });
 </script>
 </body>
