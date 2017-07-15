@@ -19,15 +19,22 @@
 <script src="jq/jquery-1.11.2.js"></script>
 <script>
     $(function () {
+        var $items = $('input[name=items]');
         $('#checkedAll').on('click',function () {
-            $('[name=items]').prop('checked', true);
+            $items.prop('checked', true);//这里必须用prop做
         });
         $('#checkedNo').on('click', function () {
-            $('[name=items]').prop('checked', false);
+//            $items.prop('checked', false);
+            $items.removeAttr('checked');
         });
         $('#checkedRev').on('click', function () {
-            $('[name=items]').each(function () {
-                this.checked =! this.checked;
+            $items.each(function () {//each()遍历,each(function(index, elem){})
+                this.checked =! this.checked;//这个效率更高，有时候原生的比jq效率更高，不一定都要用jq，这句的意思相当于下面jq语句。
+//                if($(this).prop('checked')){
+//                    $(this).prop('checked', false);
+//                }else{
+//                    $(this).prop('checked', true);
+//                }
             });
         });
     });

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="search">
+<ul id="menu">
+    <li>iphone</li>
+    <li>huawei</li>
+    <li>xiaomi</li>
+</ul>
+<script src="jq/jquery-1.11.2.js"></script>
+<script>
+    $(function () {
+//        $('#search').on('keypress', function () {
+//            console.log(this.value);
+//        });
+        $('#search').on('keyup', function () {
+//            console.log($(this).val());//上面的原生方法性能更高。
+            if(this.value != ''){//如果不判断为空时会被全部选中。
+                $("#menu li:contains("+this.value+")").css("background", "red");
+            }else{
+                $("#menu li").css("background", 'transparent');
+            }
+        });
+    })
+    //取到input里的value用onkeyup,其他方法(keydown等)取到的都是上一个值。
+</script>
+</body>
+</html>
