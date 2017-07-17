@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #fold{
+            width: 100px;
+            /*height: 40px;*/
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        #fold h3{
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+        }
+        .menu li{
+            text-align: center;
+            cursor: pointer;
+        }
+        .menu li:hover{
+            background: #ccc;
+        }
+        .menu{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul id="fold">
+    <li class="first-menu">
+        <h3>管理员</h3>
+        <ul class="menu">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+    <li class="first-menu">
+        <h3>交流员</h3>
+        <ul class="menu">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+</ul>
+<script src="jq/jquery-1.11.2.js"></script>
+<script>
+    $(function () {
+        $('.first-menu h3').on('click',function () {
+            $(this).next().stop(false,true).slideToggle(1000);
+        });
+    });
+</script>
+</body>
+</html>

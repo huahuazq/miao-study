@@ -18,7 +18,7 @@
 //            console.log(this.value);
 //        });
         $('#search').on('keyup', function () {
-//            console.log($(this).val());//上面的原生方法性能更高。
+//            console.log($(this).val());//console上面的原生方法性能更高。
             if(this.value != ''){//如果不判断为空时会被全部选中。
                 $("#menu li:contains("+this.value+")").css("background", "red");
             }else{
@@ -26,7 +26,7 @@
             }
         });
     })
-    //取到input里的value用onkeyup,其他方法(keydown等)取到的都是上一个值。
+    //取到input里的value用onkeyup,其他方法(keydown/keypress等)取到的都是上一个值。
 </script>
 </body>
 </html>

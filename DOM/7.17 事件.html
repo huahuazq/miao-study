@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2"></div>
+</div>
+<script src="jq/jquery-1.11.2.js"></script>
+<script>
+    $(function () {
+//        $('#div1').on('click',function () {
+//            $(this).css('background','red');
+//        });
+//        $('#div1').on('mouseenter',function () {
+//            console.log('div1 mouseenter');//mouseleave
+//        });
+        $('#div1').on('click', '#div2', function () {
+            console.log('123');
+        });//jq的事件代理，此处是给div2绑定的click。
+    });
+</script>
+</body>
+</html>
