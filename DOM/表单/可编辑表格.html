@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-size:16px;
+        }
+        table{
+            border:1px solid black;
+            border-collapse:collapse;
+            width:400px;
+        }
+        table td,th{
+            width:50%;
+            border:1px solid black;
+            height:30px;
+        }
+        tbody th{
+            background-color:#abc;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th colspan="2"> 鼠标点击表格就可以编辑</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td class="editable">张三</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td class="editable">李四</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td class="editable">王五</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td class="editable">赵六</td>
+    </tr>
+    </tbody>
+</table>
+<script src="../jq/jquery-1.11.2.js"></script>
+<script>
+    $(function () {
+        $("tbody tr:even").css("background-color","#edf");
+        var $editTd = $("td.editable");
+        $editTd.on('click',function(){
+            var $tdObj = $(this);
+            var $inputObj = $("<input type='text'/>").val(this.innerHTML);
+            $inputObj.width($(this).width()).css({"border":"none", "background-color":$(this).css("background-color")});
+            if($(this).has("input").length > 0){
+                return false;
+            }
+//            console.log($(this).has("input"));
+//            console.log($(this).has("input").length);
+            $(this).empty().append($inputObj);
+            $inputObj.trigger("focus").keyup(function(event){
+                var keyCode = event.which;//获得当前按下的键盘的keyCode值
+                if(keyCode == 13){
+                    $tdObj.text($(this).val());
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

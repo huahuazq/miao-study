@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #nav .menu{
+            background: #E9FBEB;
+            width: 600px;
+            height: 30px;
+            margin-top: 50px;
+        }
+        .menu li{
+            float: left;
+            list-style: none;
+            margin-right: 15px;
+            font-size: 13px;
+            line-height: 30px;
+            /*width: 49px;*/
+            /*height: 30px;*/
+        }
+        li.select{
+            padding-left: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: darkslateblue;
+        }
+        .sub{
+            position: relative;
+            margin-bottom: 30px;
+            margin-left: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .sub-menu{
+            width: 650px;
+            /*height: 300px;*/
+            /*overflow: hidden;*/
+        }
+        .sub-menu .sub{
+            float: left;
+            width: 260px;
+            display: none;
+        }
+        .con, p{
+            width: 200px;
+            font-size: 13px;
+            margin-left: 10px;
+        }
+        .se .sub{
+            display: block;
+        }
+        .con{
+            position: absolute;
+            left: 50px;
+            top: 0;
+        }
+        .con a:hover{
+            background: blue;
+            color: #fff;
+        }
+        p{
+            position: absolute;
+            left: 50px;
+            top: 20px;
+            color: #8c8c8c;
+        }
+        .selected{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="ad">
+    <div id="nav">
+        <ul class="menu">
+            <li class="select"><a href="">生活</a></li>
+            <li><a href="">兴趣</a></li>
+            <li><a href="">文化艺术</a></li>
+            <li><a href="">音乐电影</a></li>
+            <li><a href="">本地</a></li>
+            <li><a href="">其他</a></li>
+        </ul>
+    </div>
+    <div class="sub-menu">
+        <div class="sub selected">
+            <div class="img">
+                <a href=""><img src="images/g131612-4.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">法兰西情结:美酒，美食，...</a>(177)</div>
+            <p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+        </div>
+        <div class="sub selected">
+            <div class="img">
+                <a href=""><img src="images/g166185-3.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">法兰西情结:美酒，美食，...</a>(177)</div>
+            <p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+        </div>
+        <div class="sub">
+            <div class="img">
+                <a href=""><img src="images/g205089-1.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">我们一起写日记</a>(5000)</div>
+            <p>每人发起一个发言， 定时或不定时的给自己回复一下，给自己...</p>
+        </div>
+        <div class="sub">
+            <div class="img">
+                <a href=""><img src="images/g225599-3.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">让我们一起做晨型人吧！</a>(5000)</div>
+            <p>在日本，有一种叫做“晨型人”的新型族群正在迅速掀起风潮。...</p>
+        </div>
+        <div class="sub">
+            <div class="img">
+                <a href=""><img src="images/g12238-2.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">爱狗俱乐部</a>(1124)</div>
+            <p>狗狗~~~爱狗俱乐部． 欢迎大家加入　讨论一些养狗心得．...</p>
+        </div>
+        <div class="sub">
+            <div class="img">
+                <a href=""><img src="images/g361153-1.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">看起来就是比你们年轻</a> (1765)</div>
+            <p>我们好年轻～  我们好娇嫩～  我们都是无敌青春美少女～～...</p>
+        </div>
+    </div>
+    <div class="sub-menu">
+        <div class="sub selected">
+            <div class="img">
+                <a href=""><img src="images/g131612-4.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">法兰西情结:美酒，美食，...</a>(177)</div>
+            <p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+        </div>
+        <div class="sub selected">
+            <div class="img">
+                <a href=""><img src="images/g147604-45.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">推理翻译</a>(2395)</div>
+            <p>推理翻译专门组；纯民间组织，非推理圣坛 小组图标：来自...</p>
+        </div>
+        <div class="sub">
+            <div class="img">
+                <a href=""><img src="images/g58422-9.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">不喝点酒就浑身抽抽</a>(2146)</div>
+            <p>小组的我们都偏爱杯中之物，没事儿喝点小酒才是正经事。...</p>
+        </div>
+        <div class="sub">
+            <div class="img">
+                <a href=""><img src="images/g320386-4.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">我们一起创造给力画面 !</a> (1685)</div>
+            <p>快使用双截棍┗(｀o′)┓哼┏(｀○′)┛哼┏(｀o′)┓哈┗...</p>
+        </div>
+        <div class="sub">
+            <div class="img">
+                <a href=""><img src="images/g201001-7.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">人生的意义在于电视剧</a> (1469)</div>
+            <p>祝每位组员天天开心，有好剧看 空虚的时候 看看电视剧 ...</p>
+        </div>
+        <div class="sub">
+            <div class="img">
+                <a href=""><img src="images/g61581-1.jpg" alt=""></a>
+            </div>
+            <div class="con"><a href="">夜晚跑步爱好者乐园</a>(2780)</div>
+            <p>欢迎来到夜晚跑步爱好者乐园～～ 让那些夜晚跑步...</p>
+        </div>
+    </div>
+</div>
+<script src="../jq/jquery-1.11.2.js"></script>
+<script>
+    $(function () {
+        $('ul li').on('click',function () {
+            $('.sub-menu').addClass('se');
+        });
+    })
+</script>
+<script>
+</script>
+</body>
+</html>

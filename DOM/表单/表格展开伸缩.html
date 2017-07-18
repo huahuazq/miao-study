@@ -18,6 +18,17 @@
             border-bottom:1px solid #333;
             width:100px;
         }
+        .parent	{
+            background:#FFF38F;
+            cursor:pointer;
+        }
+        .odd{
+            background:#FFFFEE;
+        }  /* 奇数行样式*/
+        .selected{
+            background:#FF6500;
+            color:#fff;
+        }
     </style>
 </head>
 <body>
@@ -39,6 +50,27 @@
     <tr class="child_row_03"><td>MAXMAN</td><td>女</td><td>浙江杭州</td></tr>
     </tbody>
 </table>
-
+<script src="../jq/jquery-1.11.2.js"></script>
+<script>
+//    $(function () {
+//        $('#row_01').on('click',function () {
+//            $('.child_row_01').toggle();
+//            $('#row_01').toggleClass('selected');
+//        });
+//        $('#row_02').on('click',function () {
+//            $('.child_row_02').toggle();
+//            $('#row_02').toggleClass('selected');
+//        });
+//        $('#row_03').on('click',function () {
+//            $('.child_row_03').toggle();
+//            $('#row_03').toggleClass('selected');
+//        });
+//    });
+$(function(){
+    $('tr.parent').on('click',function(){   // 获取所谓的父行
+        $(this).toggleClass("selected").siblings('.child_'+this.id).toggle();// 添加/删除高亮   // 隐藏/显示所谓的子行
+    });
+});
+</script>
 </body>
 </html>
