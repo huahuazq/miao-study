@@ -41,11 +41,14 @@
             width: 650px;
             /*height: 300px;*/
             /*overflow: hidden;*/
+            display: none;
         }
         .sub-menu .sub{
             float: left;
             width: 260px;
-            display: none;
+        }
+        .aa{
+            display: block;
         }
         .con, p{
             width: 200px;
@@ -87,7 +90,7 @@
             <li><a href="">其他</a></li>
         </ul>
     </div>
-    <div class="sub-menu">
+    <div class="sub-menu aa">
         <div class="sub selected">
             <div class="img">
                 <a href=""><img src="images/g131612-4.jpg" alt=""></a>
@@ -179,10 +182,46 @@
 <script src="../jq/jquery-1.11.2.js"></script>
 <script>
     $(function () {
-        $('ul li').on('click',function () {
-            $('.sub-menu').addClass('se');
+        var $ul1 = $('ul li');
+        function Carousel(){
+            var _timer = -1;
+            this.start = function(){
+                var idx = $ul1.index($ul1.filter(".sub-menu"));
+                _timer = setInterval(function(){
+                    if(idx == $ul1.length) idx = 0;
+                    $($ul1[idx++]).trigger("click");
+                    //idx++;
+                }, 2000);
+            }
+            this.pause = function(){
+                clearInterval(_timer);
+            }
+        }
+        var carousel = new Carousel();
+        carousel.start();
+        $ul1.add(".sub-menu").hover(function(){
+            carousel.pause();
+        },function(){
+            carousel.start();
         });
-    })
+        $("#ad div#nav li").click(function(){
+            var $li = $(this);//将当前列表对象保存起来，供下面的匿名函数调用
+            setTimeout(function(){//使用setTimeout函数是为了延时一段时间，达到缓冲效果
+                var idx = $li.index();//得到当前点击的列表的索引值
+//                $li.addClass("on").siblings().removeClass("on");//为当前点击的列表添加选中样式，并移除其兄弟切点样式
+                $($(".sub-menu")[idx]).show()//显示对应当前列表索引的item
+                    .siblings().hide();
+            }, 600);
+        });
+    });
+
+
+
+//        $('ul li').on('click',function () {
+//            var $now = $(this).index();
+//            $('.sub-menu').eq($now).addClass('aa').siblings().removeClass('aa');
+//        });
+//    })
 </script>
 <script>
 </script>

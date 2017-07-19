@@ -7,6 +7,7 @@ $(function () {
         $(elem).css({
             zIndex : 5 - index
         });
+
     });
     var $menus = $('#menu a');
     var nowIndex = 0;
@@ -36,6 +37,8 @@ $(function () {
         }
     });
 
+    tooltip("#jnNoticeInfo li a");
+    tooltip(".jnCatainfo a");
 
     $('#nav li').hover(function () {
         $(this).children('.jnNav').show();
@@ -54,4 +57,9 @@ $(function () {
         },1000);
     });
 
-})
+    $('#skin li').on('click',function () {
+        $('#cssfile').attr('href','styles/skin/'+ $(this).attr('id') +'.css');
+        $(this).addClass('selected').siblings().removeClass('selected');
+    });
+});
+

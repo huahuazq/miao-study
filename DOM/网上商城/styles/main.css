@@ -768,5 +768,5 @@ ul.rating li.five a:hover {background-position:0 -160px}
 .tip{
     position: absolute;
     border: 1px solid #000;
-    background-color: #ccc;
+    background-color: pink;
 }

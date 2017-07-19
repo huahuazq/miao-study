@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getCookie(key){//因为cookie中没有取值的函数所以需要自己写因为是取值，所以只写key就可以
+        var arr = document.cookie.split(";");//由于输出的值是
+        //school='weochuang'; name='lisi' ；取值是一个个取所以要把这个结果分开。利用;进行字符串分隔，取到的是school='weochuang'和name='lisi'两个分开的
+        for(var i=0; i<arr.length; i++){//由于key值给了，所以只需要取到的值，所以还需要给字符串分隔，首先进行遍历，因为是多个值，利用等号再进行分割
+            var temp = arr[i].split("=");
+            if(temp[0].trim() == key){//进行判断，[0]指的是name和school的下标，如果这个值等于给的key，则就取它后面的值。trim()的作用是清除前后的空格，school='weochuang'和name='lisi'之间分号后有一个空格。
+                return temp[1];
+            }
+        }
+    }
+
+    function delCookie(key){
+        var date  = new Date();
+        date.setDate(date.getDate() - 100);//当前时间减去一部分时间，多大都想表示过期了
+        document.cookie = key + "=abc;expires=" + date.toUTCString();//key的值是什么无所谓没影响，主要是过期时间
+    }
+</script>
+</body>
+</html>

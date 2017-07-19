@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/skin_0.css">
+    <link rel="stylesheet" href="css/skin_0.css" id="cssfile">
 </head>
 <body>
 <ul id="skin">
-    <li id="skin_0" title="灰色" class="selected">灰色</li>
-    <li id="skin_1" title="紫色">紫色</li>
-    <li id="skin_2" title="红色">红色</li>
-    <li id="skin_3" title="天蓝色">天蓝色</li>
-    <li id="skin_4" title="橙色">橙色</li>
-    <li id="skin_5" title="淡绿色">淡绿色</li>
+    <li id="skin_0" title="灰色" class="selected"></li>
+    <li id="skin_1" title="紫色"></li>
+    <li id="skin_2" title="红色"></li>
+    <li id="skin_3" title="天蓝色"></li>
+    <li id="skin_4" title="橙色"></li>
+    <li id="skin_5" title="淡绿色"></li>
 </ul>
 
 <div id="div_side_0">
@@ -31,7 +31,8 @@
 <script>
     $(function () {
         $('#skin li').on('click',function () {
-            $('.title')
+            $('#cssfile').attr('href','css/'+ $(this).attr('id') +'.css');
+            $(this).addClass('selected').siblings().removeClass('selected');
         });
     })
 </script>
