@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            perspective: 1000px;
+            perspective-origin: 50% -200px;
+        }
+        #container{
+            width: 125px;
+            height: 125px;
+            margin: 200px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 1s linear;
+        }
+        #container img{
+            width: 125px;
+            height: 125px;
+            position: absolute;
+            transition: all 1s linear;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+    var oContainer = document.getElementById('container');
+    var counter = 0;
+    for(var i=0; i<9; i++){
+        var oImg = new Image();
+        oImg.onload = function () {
+            counter++;
+            if(counter == 9){
+                loadSuccess();
+            }
+        };
+        oImg.src = "images/"+ (i + 1) + ".jpg";
+        oContainer.appendChild(oImg);
+    }
+    var num = 0;
+    oContainer.onclick = function () {
+        num++;
+        oContainer.style.transform = 'rotateY('+ num * 40 +'deg)';
+    };
+    function loadSuccess() {
+        var aImg = oContainer.getElementsByTagName("img");
+        for(var i=0; i<aImg.length; i++){
+            aImg[i].style.transform = 'rotateY('+ (i + 1) * 40 +'deg) translateZ(200px)';
+            aImg[i].style.transitionDelay = i + 200 + 'ms';
+        }
+    }
+</script>
+</body>
+</html>

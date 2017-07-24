@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #contains{
+            width: 500px;
+            position: relative;
+            margin: 100px auto;
+        }
+        #contains img{
+            border: 10px solid pink;
+            box-shadow: 5px 5px 5px rgba(50, 50, 50, .4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 1s ease;
+        }
+        #contains img:first-child{
+            transform: rotate(30deg);
+        }
+        #contains img:last-child{
+            transform: rotate(-20deg);
+        }
+        #contains img:hover{
+            transform: scale(1.2);
+            box-shadow: 10px 10px 5px rgba(50, 50, 50, .4);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="contains">
+    <img src="../DOM/imgs/img01.jpg" alt="">
+    <img src="../DOM/imgs/img02.jpg" alt="">
+</div>
+</body>
+</html>

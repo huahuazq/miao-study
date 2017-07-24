@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #clock{
+            width: 200px;
+            height: 200px;
+            border: 5px solid pink;
+            border-radius: 50%;
+            margin: 200px auto;
+            position: relative;
+        }
+        #clock img{
+            width: 200px;
+            height: 200px;
+            /*margin-top: 5px;*/
+            /*margin-bottom: 5px;*/
+            border-radius: 50%;
+        }
+        #second img{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: -40px;
+            left: -10px;
+        }
+        #dial li{
+            width: 2px;
+            height: 6px;
+            list-style: none;
+            background: #F9044E;
+            position: absolute;
+            left: 100px;
+            top: 0;
+            transform-origin: 0 100px;//原点一开始在li上，li围绕自己旋转，但希望li可以在整个圆环上旋转，所以需要把原点设置在圆环的中心，横坐标不动，由于电脑上y轴向下是正的，所以纵坐标向下移动100px，高度的一半，移动到圆心。
+        }
+        #dial li:nth-child(5n + 1){
+            height: 10px;
+        }
+        #hour{
+            width: 4px;
+            height: 40px;
+            background: #FBA60A;
+            position: absolute;
+            left: 98px;
+            top: 60px;
+        }
+        #minute{
+            width: 4px;
+            height: 60px;
+            background: #fa558f;
+            position: absolute;
+            left: 98px;
+            top: 40px;
+        }
+        #clock .aa{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 87px;
+            left: 93px;
+            z-index: 1;
+        }
+        #second{
+            width: 2px;
+            height: 70px;
+            background: #ff0000;
+            position: absolute;
+            left: 99px;
+            top: 30px;
+        }
+        #clock div{
+            transform-origin: bottom;//三个针围绕底部转
+        }
+        /*#dial li:nth-child(2){*/
+            /*transform: rotate(6deg);*/
+        /*}*/
+        /*#dial li:nth-child(3){*/
+            /*transform: rotate(12deg);*/
+        /*}*/
+        /*#dial li:nth-child(4){*/
+            /*transform: rotate(18deg);*/
+        /*}*/
+        /*#dial li:nth-child(5){*/
+            /*transform: rotate(24deg);*/
+        /*}*/
+        /*#dial li:nth-child(6){*/
+            /*transform: rotate(30deg);*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div id="clock">
+    <img src="img/222.jpeg" alt="">
+    <ul id="dial">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!--<img src="img/3333.jpeg" alt="" class="aa">-->
+    <div id="hour"></div>
+    <div id="minute"></div>
+    <div id="second">
+        <img src="img/3333.jpeg" alt="">
+    </div>
+</div>
+</body>
+<script>
+    var oDial = document.getElementById("dial");
+    var oHour = document.getElementById("hour");
+    var oMinute = document.getElementById("minute");
+    var oSecond = document.getElementById("second");
+    var lis = "";
+    for(var i=0; i<60; i++){
+        lis += "<li style='transform: rotate(" + i * 6 + "deg);'></li>";
+    }
+    oDial.innerHTML = lis;
+    run();
+    setInterval(run, 1000);//run加括号是调用，不加括号是声明
+    function run(){
+        var now = new Date();
+        var second = now.getSeconds();
+        var minute = now.getMinutes() + second / 60;
+        var hour = now.getHours() ;
+        oHour.style.transform = "rotate("+ (hour * 30 + minute / 60 * 30)  +"deg)";//因为加号是字符串拼接，所以如果不把计算括上，相当于把两个计算拼接成字符串而不是将结果相加。
+        oMinute.style.transform = "rotate("+ minute * 6 +"deg)";
+        oSecond.style.transform = "rotate("+ second * 6 +"deg)";
+    }
+</script>
+</html>

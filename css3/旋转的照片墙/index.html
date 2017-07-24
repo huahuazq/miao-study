@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转的照片墙</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body, html{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            position: relative;
+        }
+        #container{
+            width: 100%;
+            height: 100%;
+            background-image: url(img/bg.jpg);
+        }
+        #container .img{
+            width: 125px;
+            height: 125px;
+            border: 5px solid #fff;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: -500px;
+            left: -500px;
+            transition: all 1s ease;
+            cursor: pointer;
+        }
+        #container span{
+            display: block;
+            width: 100%;//span充满整个class为img的div
+            height: 100%;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        #next, #prev{
+            width: 60px;
+            height: 60px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            display: none;
+            cursor: pointer;
+        }
+        #prev{
+            background-image: url(img/prev.png);
+            left: 0;
+            border-radius: 0 8px 8px 0;
+        }
+        #next{
+            background-image: url(img/next.png);
+            right: 0;
+            border-radius: 8px 0 0 8px;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<div id="prev"></div>
+<div id="next"></div>
+
+<script>
+    var ROW = 4, COL = 6, NUM = ROW * COL,
+        THUMB_WIDTH = 125, THUMB_HEIGHT = 125,
+        BIG_WIDTH = 750, BIG_HEIGHT = 500;//声明一些常量
+    var count = 0;
+    var oContainer = document.getElementById('container');
+    var oPrev = document.getElementById("prev");
+    var oNext = document.getElementById("next");
+    var aImg;
+    var nowIndex = 1;
+    for(var i=0; i<NUM; i++){
+        var oThumbImg = new Image();
+        oThumbImg.onload = function () {
+            count++;
+            if(count == NUM * 2){
+                loadSuccess();
+            }
+        };
+        oThumbImg.src = 'img/thumbs/'+ (i + 1) +'.jpg';
+
+        var oBigImg = new Image();
+        oBigImg.onload = function () {
+            count++;
+            if(count == NUM * 2){
+                loadSuccess();
+            }
+        };
+        oBigImg.src = 'img/'+ (i+1) +'.jpg';
+    }
+
+    var index = 0;
+    var oImgWidth;
+    var oImgHeight;
+    var fColGap;
+    var fRorGap;
+    function loadSuccess() {
+        for (var i = 0; i < ROW; i++) {
+            for (var j = 0; j < COL; j++) {
+                index++;
+                var oDiv = document.createElement('div');
+                oDiv.style.backgroundImage = 'url(img/thumbs/' + index + '.jpg)';//因为循环里的i不是NUM里的了，所以图片名称不能再写i+1,需要在外面定义一个变量index记录下标，写在这里。
+                oDiv.className = 'img';
+                oDiv.innerHTML = '<span></span>';
+                oDiv.pos = {
+                    col: j,
+                    row: i
+                };
+                oDiv.index = index;
+                oContainer.appendChild(oDiv);
+            }
+        }
+
+        aImg = document.getElementsByClassName('img');
+        oImgWidth = aImg[0].offsetWidth;
+        oImgHeight = aImg[0].offsetHeight;
+        fColGap = (oContainer.offsetWidth - oImgWidth * COL) / (COL + 1);
+        fRorGap = (oContainer.offsetHeight - oImgHeight * ROW) / (ROW + 1);
+        for (var i = 23; i >= 0; i--) {
+            aImg[i].style.transitionDelay = (NUM - i) * 100 + 'ms';
+            aImg[i].style.top = (fRorGap + oImgHeight) * aImg[i].pos.row + fRorGap + 'px';
+            aImg[i].style.left = (fColGap + oImgWidth) * aImg[i].pos.col + fColGap + 'px';
+            aImg[i].style.transform = 'rotate(' + (Math.random() * 40 - 20) + 'deg)';//Math.random()的范围是大于等于0，小于等于1，这里设定的角度范围是-20到20.
+        }
+    }
+
+    var fBigRoWGap = (oContainer.offsetHeight - BIG_HEIGHT) / 2;
+    var fBigColGap = (oContainer.offsetWidth - BIG_WIDTH) / 2;
+    var bFlag = true;
+    oContainer.onclick = function (e) {//也可以给每一个img都绑定一个事件，但给他们的父元素整体绑定会更好。
+        if(this === e.target){//this指的是container,e.target为事件源，点空的时候e.target也为container，两者相等什么都不用做，所以返回false,点图片时e.target为img的div，两者不等。
+            return false;
+        }
+        if(bFlag){
+            for(var i=0; i<aImg.length; i++){
+                aImg[i].style.transitionDelay = '0ms';
+                aImg[i].style.top = fBigRoWGap + THUMB_HEIGHT * aImg[i].pos.row + 'px';
+                aImg[i].style.left = fBigColGap + THUMB_WIDTH * aImg[i].pos.col + 'px';
+                aImg[i].style.transform = 'rotate(0)';
+                aImg[i].style.borderWidth = '1px';
+
+                var oSpan = aImg[i].getElementsByTagName('span')[0];
+                oSpan.style.opacity = 1;
+                var imgURL;
+                if(e.target.className == 'img'){
+                    imgURL = e.target.index;
+                }else{
+                    imgURL = e.target.parentNode.index;
+                }
+                oSpan.style.backgroundImage = "url(img/"+ imgURL +".jpg)";
+                oSpan.style.backgroundPosition = -THUMB_WIDTH * aImg[i].pos.col + "px " + (-THUMB_HEIGHT * aImg[i].pos.row) + "px";
+                oSpan.style.transitionDelay = '0ms';
+                nowIndex = imgURL;
+            }
+            oPrev.style.display = oNext.style.display = 'block';
+        }else{
+            for(var i=0; i<NUM; i++){
+                aImg[i].style.top = (fRorGap + oImgHeight) * aImg[i].pos.row + fRorGap + 'px';
+                aImg[i].style.left = (fColGap + oImgWidth) * aImg[i].pos.col + fColGap + 'px';
+                aImg[i].style.transform = 'rotate(' + (Math.random() * 40 - 20) + 'deg)';
+                aImg[i].style.borderWidth = '5px';
+                var oSpan = aImg[i].getElementsByTagName('span')[0];
+                oSpan.style.opacity = 0;
+                oSpan.style.transitionDelay = '0ms';
+            }
+            oPrev.style.display = oNext.style.display = 'none';
+        }
+        bFlag = !bFlag;
+    };
+    oPrev.onclick = oNext.onclick = function () {
+        if(this == oNext){
+            nowIndex++;
+            if(nowIndex == NUM + 1){
+                nowIndex = 1;
+            }
+        }else{
+            nowIndex--;
+            if(nowIndex == 0){
+                nowIndex = NUM;
+            }
+        }
+
+        var arr = [];
+        for(var i=0; i<NUM; i++){
+            arr.push(i);
+        }
+        arr.sort(function (a, b) {
+            return Math.random() - 0.5;
+        });
+
+        for(var i=0; i<arr.length; i++){
+            var oSpan = aImg[arr[i]].getElementsByTagName('span')[0];
+            oSpan.style.transitionDelay = (i + 1) * 50 +'ms';
+            oSpan.style.backgroundImage = "url(img/"+ nowIndex +".jpg)";
+        }
+    };
+</script>
+</body>
+</html>
