@@ -30,14 +30,14 @@ define(['jquery'], function ($) {
             height: this.defaulstSettings.height
         });
         this.$item.html(this.defaulstSettings.title);
-        if(this.defaulstSettings.content.indexOf('.html') != -1){//?
+        if(this.defaulstSettings.content.indexOf('.html') != -1){
             $(this.$content).load(this.defaulstSettings.content);
         }else{
             $(this.$content).html(this.defaulstSettings.content);
         }
         this.$close.on('click', function () {
             this.close();
-        }.bind(this));
+        }.bind(this));//这里的this指的是this.$close，不是实例化对象，所以需要改变指针，这样function里的this都变成了bind后的this，改变后this指针为实例化对象，这样就可以调用实例化对象的方法了
     };
     Dialog.prototype.close = function () {
         this.$container.remove();
