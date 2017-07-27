@@ -34,7 +34,7 @@ define(['jquery'], function ($) {
                 $('.dialog-content').html(defaulstSettings.content);
             }
             $('.dialog-title-close').on('click', function () {
-                $(this).parents('.dialog-container').remove();//parents从父元素往上找，直到找到根节点。
+                $(this).parents('.dialog-container').remove();//parents从父元素开始一直往上找，直到找到根节点。
             }); //$('.dialog-)开启多个弹出框，点击关闭全部关闭
         }
     };

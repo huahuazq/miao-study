@@ -12,10 +12,35 @@ define(['jquery'], function ($) {
             title: '弹出层',
             content: ''
         };
-        this.$container
+        $.extend(this.defaulstSettings, settings);
+        this.$container = $('<div class="dialog-container">');
+        this.$mask = $('<div class="dialog-mask"></div>');
+        this.$box = $('<div class="dialog-box">');
+        this.$title = $('<div class="dialog-title">');
+        this.$item = $('<div class="dialog-title-item"></div>');
+        this.$close = $('<div class="dialog-title-close">[x]</div>');
+        this.$content = $('<div class="dialog-content"></div>');
     }
     Dialog.prototype.open = function () {
-
+        this.$container.append(this.$mask).append(this.$box).appendTo(document.body);
+        this.$box.append(this.$title).append(this.$content);
+        this.$title.append(this.$item).append(this.$close);
+        this.$box.css({
+            width: this.defaulstSettings.width,
+            height: this.defaulstSettings.height
+        });
+        this.$item.html(this.defaulstSettings.title);
+        if(this.defaulstSettings.content.indexOf('.html') != -1){//?
+            $(this.$content).load(this.defaulstSettings.content);
+        }else{
+            $(this.$content).html(this.defaulstSettings.content);
+        }
+        this.$close.on('click', function () {
+            this.close();
+        }.bind(this));
+    };
+    Dialog.prototype.close = function () {
+        this.$container.remove();
     };
     return Dialog;
-}
+});
