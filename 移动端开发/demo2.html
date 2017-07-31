@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            width: 960px;
+            margin: 30px auto;
+            background: pink;
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+        }
+        figure{
+            width: 960px;
+            background: url('01.jpg') no-repeat;
+            height: 540px;
+            background-size: contain;
+            margin: 0 auto;
+        }
+        article{
+            width: 960px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #left{
+            background: plum;
+            float: left;
+            width: 630px;
+            height: 300px;
+            margin-right: 30px;
+        }
+        #left, #right{
+            display: table;
+        }
+        #left p, #right p{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        #right{
+            width: 300px;
+            height: 300px;
+            float: left;
+            background: powderblue;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        @media (max-width: 959px) {
+            h3, figure, article{
+                width: 100%;
+            }
+            figure{
+                background-image: url('01_s_2x.jpg');
+                height: 0;
+                padding-top: 56.25%;
+            }
+            #left{
+                width: 67%;
+                margin-right: 3%;
+            }
+            #right{
+                width: 30%;
+            }
+        }
+        @media (max-width: 479px) {
+            #left, #right{
+                width: 100%;
+            }
+            figure{
+                background-image: url('01_s.jpg');
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>页头</h3>
+    </header>
+    <nav>
+        <h3>导航</h3>
+    </nav>
+    <figure></figure>
+    <article class="clearfix">
+        <section id="left">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
+                vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam
+                quis magna facilisis, eget feugiat nisi lacinia.</p>
+        </section>
+        <section id="right">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
+                vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam
+                quis magna facilisis, eget feugiat nisi lacinia.</p>
+        </section>
+    </article>
+    <footer>
+        <h3>页脚</h3>
+    </footer>
+</body>
+</html>
