@@ -5,57 +5,87 @@
 a{
     text-decoration: none;
 }
-.wrapper{
-    width: 100%;
+img{
+    border: 0;
 }
-header{
+#header{
+    border-top: 2px solid #ccc;
     height: 100px;
 }
-header div{
-    float: right;
-    margin-right: 20px;
-    margin-top: 15px;
+#header .wrapper{
+    width: 1330px;
+    margin: 0 auto;
+}
+#menu{
+    width: 530px;
+    height: 98px;
+    float: left;
+}
+#menu span, #load p, #load span{
     color: #4e4e4e;
 }
-header div a{
+#load a{
     color: #967a50;
     font-size: 14px;
 }
-#img{
-    width: 225px;
-    height: 80px;
-    float: left;
+#main-header{
+    height: 100px;
     position: relative;
 }
-#img img{
-    width: 73px;
-    height: 73px;
+#menu img{
     position: absolute;
-    left: 600px;
-    top: -10px;
+    left: 30px;
+    top: 30px;
 }
-nav{
-    position: relative;
-
+#menu span{
+    position: absolute;
+    left: 30px;
+    top: 50px;
 }
-nav p{
+#logo{
     float: left;
-    color: #4e4e4e;
-    margin-left: 50px;
-    margin-top: 45px;
-    font-size: 14px;
+    margin-left: 40px;
 }
-nav img{
+#logo .logo{
+    width: 226px;
+    height: 70px;
+    margin: 0 auto;
+    padding: 15px 0;
     display: block;
-    float: left;
-    width: 40px;
-    height: 25px;
-    position: absolute;
-    left: 45px;
-    top: 20px;
-    /*margin-left: 50px;*/
 }
+img{
+    display: block;
+}
+#logo img{
+    width: 73px;
+    margin: 0 auto;
+}
+#load {
+    height: 98px;
+    width: 530px;
+    float: left;
+    /*position: relative;*/
+    /*top: 30px;*/
+}
+#load .load{
+    width: 520px;
+    position: absolute;
+    top: 30px;
+    text-align: right;
+}
+/*@media (max-width: 1300px) {*/
+    /*#header .wrapper{*/
+        /*width: 100%;*/
+    /*}*/
+    /*#menu, #load{*/
+        /*width: 30%;*/
+    /*}*/
+    /*#logo{*/
+        /*width: 40%;*/
+    /*}*/
+/*}*/
 figure{
+    width: 100%;
     position: relative;
 }
 figure img{
@@ -79,7 +109,7 @@ figure p{
     background: #0F0F0F;
 }
 .rewords{
-    background: url('../img/rewards_bg.png') 300px 0px no-repeat;
+    background: url('../img/rewards_bg.png') 200px -50px no-repeat;
     background-size: contain;
     height: 220px;
     position: relative;
@@ -90,5 +120,11 @@ figure p{
     height: 28px;
     position: absolute;
     top: 80px;
-    left: 400px;
+    left: 300px;
+}
+.logo{
+    background: url('../img/rewards_logo_20170209.svg') no-repeat;
+    width: 160px;
+    height: 38px;
+    background-size: contain;
 }

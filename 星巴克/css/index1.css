@@ -1,0 +1,247 @@
+#header{
+    height: 100px;
+    display: flex;
+}
+#menu{
+    width: 82px;
+    height: 46px;
+    margin-top: 27px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#club{
+    width: 82px;
+    height: 42px;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-top: 29px;
+    transition: all 1s ease;
+}
+#club span a{
+    color: #b89f7a;
+    font-weight: bold;
+}
+#logo{
+    flex-grow: 1;
+    text-align: center;
+}
+#logo img{
+    width: 73px;
+    height: 73px;
+    margin-top: 8px;
+}
+
+#banner{
+    width: 100%;
+}
+#banner img{
+    width: 100%;
+    display: block;
+}
+#banner img:nth-child(2){
+    display: none;
+}
+
+
+@media (max-width: 991px) {
+    #banner img:nth-child(1){
+        display: none;
+    }
+    #banner img:nth-child(2){
+        display: block;
+    }
+}
+@media (max-width: 767px) {
+    #club{
+        font-size: 12px;
+    }
+}
+
+
+#login{
+    height: 220px;
+    background: #0F0F0F;
+}
+#login .wrapper{
+    width: 992px;
+    margin: 0 auto;
+}
+#login .left{
+    background:url("../img/rewards_bg.png") no-repeat;
+    background-size: 90%;
+    padding-left: 90px;
+    width: 260px;
+    height: 220px;
+    overflow: hidden;
+    float: left;
+}
+#login .left p{
+    height: 28px;
+    line-height: 28px;
+    font-size: 18px;
+    color:#fff;
+    margin-top: 96px;
+}
+#login .left img{
+    width: 160px;
+    display:block;
+}
+#login .right{
+    width: 430px;
+    float: left;
+    height: 220px;
+}
+#login .content-title{
+    margin-top: 68px;
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    font-size:28px;
+    color:#fff;
+}
+#login .content-text{
+    height: 28px;
+    line-height: 28px;
+    font-size: 16px;
+    color:#fff;
+    width: 100%;
+    margin: 5px 0;
+}
+#login .right .btn{
+    margin: 7px 14px 7px 0;
+    /*padding: 14px 40px;*/
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 700;
+    color:#a98e67;
+    border: 2px solid #a98e67;
+    display: inline-block;
+}
+#login .right .btn:hover{
+    background: #a98e67;
+    color:#fff;
+}
+#login .right a:last-of-type{
+    font-size: 14px;
+    color:#b89f7a;
+    margin-left: 30px;
+}
+#login .right a:last-of-type:hover{
+    color:#a98e67;
+}
+@media(max-width:767px){
+    #login{
+        height: auto;
+    }
+    #login .wrapper{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    #login .wrapper .left{
+        float: none;
+        width: 100%;
+        padding: 55px 0;
+        height: auto;
+    }
+    #login .wrapper .left p{
+        text-align: center;
+        margin-top: 0;
+    }
+    #login .wrapper .left img{
+        /*width: 160px;*/
+        margin: 0 auto;
+    }
+    #login .wrapper .right{
+        float: none;
+        height: auto;
+        width: 100%;
+    }
+    #login .wrapper .right p{
+        width: 100%;
+        margin: 0;
+        height: auto;
+        text-align: center;
+    }
+    #login .wrapper .right .btn{
+        width: 80%;
+        display:block;
+        margin: 10px auto;
+        /*padding: 0;*/
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+    }
+    #login .wrapper .right a:last-of-type{
+        display: block;
+        width: 80%;
+        height: 78px;
+        margin: 0 auto;
+        text-align: right;
+        line-height: 78px;
+    }
+}
+#download{
+    height: 220px;
+    background: url(../img/app_bg.gif) repeat scroll center;
+}
+#download .wrapper{
+    width: 1170px;
+    margin: 0 auto;
+}
+#app{
+    float: left;
+}
+#app img{
+    /*width: 350px;*/
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+#qrcode{
+    width: 242px;
+    height: 209px;
+    float: left;
+}
+#qrcode .app-qrcode img{
+    width: 130px;
+    height: 130px;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+.app-buttons{
+    height: 75px;
+    width: 242px;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+.app-buttons .app-down{
+    width: 68px;
+    height: 32px;
+    font-size: 13px;
+    float: right;
+}
+#descript{
+    width: 450px;
+    float: left;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+#descript p{
+    width: 100%;
+    height: 56px;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#descript a{
+    height: 28px;
+    color:#b89f7a;
+    font-size: 14px;
+}
+#descript a:hover{
+    color:#a98e67;
+}
