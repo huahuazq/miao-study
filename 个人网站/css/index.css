@@ -1,0 +1,128 @@
+#header{
+    height: auto;
+    position: relative;
+    width: 100%;
+}
+#contain{
+    background: url(../img/banner.jpg) no-repeat;
+    height: 4rem;
+    background-size: cover;
+    overflow: hidden;
+    opacity: 0.8;
+    /*width: 6.4rem;*/
+}
+#nav{
+    width: 100%;
+}
+#nav .menu{
+    color: hotpink;
+    height: 30px;
+    /*width: 100%;*/
+    margin-left: 15%;
+    margin-top: 20px;
+    margin-right: 15%;
+    width: 80%;
+}
+.menu li{
+    float: left;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.menu .select{
+    margin-right: 15%;
+}
+#contain .img img{
+    /*width: 100px;*/
+    height: 100px;
+    /*border: 5px solid #fff;*/
+    /*border-radius: 50%;*/
+    position: absolute;
+    top: 15%;
+    left: 46%;
+}
+.img p{
+    color: palegreen;
+    /*font-weight: bolder;*/
+    font-size: 40px;
+    text-align: center;
+    margin-top: 14%;
+}
+.img span{
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+#context{
+    position: absolute;
+    bottom: 5%;
+    margin-left: 20%;
+    margin-right: 10%;
+}
+#context{
+    width: 80%;
+}
+#context p{
+    float: left;
+    font-size: 18px;
+}
+#context .china{
+    /*float: left;*/
+    display: block;
+    margin-right: 20%;
+}
+#context p span{
+    color: #E31559;
+}
+@media (max-width: 891px) {
+    #nav .menu{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .menu .select{
+        margin-right: 10%;
+    }
+    #context .china{
+        margin-right: 10%;
+    }
+}
+@media (max-width: 479px) {
+    #nav .menu{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .menu .select{
+        margin-right: 10%;
+    }
+    .menu li{
+        font-size: 12px;
+    }
+    .img p{
+        font-size: 26px;
+        margin-top: 10%;
+    }
+    #contain .img img{
+        height: 50px;
+    }
+    .img span{
+        font-size: 8px;
+    }
+    #context p{
+        font-size: 12px;
+    }
+    #context .china{
+        margin-right: 10%;
+    }
+}
+@media (max-width: 329px) {
+    .menu .select{
+        margin-right: 5%;
+    }
+    #context{
+        margin-left: 10%;
+    }
+    #context .china{
+        margin-right: 5%;
+    }
+}

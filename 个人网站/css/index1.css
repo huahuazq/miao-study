@@ -1,0 +1,13 @@
+#header{
+    height: auto;
+    position: relative;
+    width: 100%;
+}
+#contain{
+    background: url(../img/banner.jpg) no-repeat;
+    height: 4rem;
+    background-size: cover;
+    overflow: hidden;
+    opacity: 0.8;
+    /*width: 6.4rem;*/
+}
